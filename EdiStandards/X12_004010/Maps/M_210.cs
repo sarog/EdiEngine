@@ -20,6 +20,7 @@ namespace EdiEngine.Standards.X12_004010.Maps
 				new K1() { ReqDes = RequirementDesignator.Optional, MaxOccurs = 10 },
 				new L_N1(this) { ReqDes = RequirementDesignator.Optional, MaxOccurs = 10 },
 				new L_N7(this) { ReqDes = RequirementDesignator.Optional, MaxOccurs = 10 },
+                new L_SPO(this) { ReqDes = RequirementDesignator.Optional, MaxOccurs = 999999 },
 				new L_S5(this) { ReqDes = RequirementDesignator.Optional, MaxOccurs = 999 },
 				new L_LX(this) { ReqDes = RequirementDesignator.Optional, MaxOccurs = 9999 },
 				new L3() { ReqDes = RequirementDesignator.Optional, MaxOccurs = 1 },
