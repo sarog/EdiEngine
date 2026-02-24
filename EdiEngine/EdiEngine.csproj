@@ -1,10 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\pack.props" />
 
   <PropertyGroup>
     <RootNamespace>EdiEngine</RootNamespace>
     <AssemblyName>EdiEngine</AssemblyName>
     <Description>EDI Engine main library</Description>
     <TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EdiEngine.Common\EdiEngine.Common.csproj"/>
-    <ProjectReference Include="..\EdiStandards\X12_004010\X12_004010.csproj"/>
+    <ProjectReference Include="..\EdiEngine.Common\EdiEngine.Common.csproj" PrivateAssets="All"/>
+    <ProjectReference Include="..\EdiStandards\X12_004010\X12_004010.csproj" PrivateAssets="All"/>
   </ItemGroup>
 
   <ItemGroup>
