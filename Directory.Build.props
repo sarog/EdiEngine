@@ -1,9 +1,10 @@
 ﻿<Project>
-    <PropertyGroup>
-        <AssemblyVersion>1.6.1.0</AssemblyVersion>
-        <FileVersion>1.6.1.0</FileVersion>
-        <Version>1.6.1.0</Version>
-        <PackageProjectUrl>https://github.com/sarog/EdiEngine</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/sarog/EdiEngine</RepositoryUrl>
-    </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyVersion>1.6.1.0</AssemblyVersion>
+    <FileVersion>1.6.1.0</FileVersion>
+    <Version>1.6.1.0</Version>
+    <PackageProjectUrl>https://github.com/sarog/EdiEngine</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sarog/EdiEngine</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
 </Project>
