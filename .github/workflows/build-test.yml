@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         dotnet-version: [ '10.0.x' ]
-
     steps:
       - uses: actions/checkout@v5
       - name: Setup .NET ${{ matrix.dotnet-version }}
@@ -27,3 +26,29 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --verbosity normal
+
+  deploy:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '10.0.x' ]
+    permissions:
+      packages: write
+      contents: read
+    needs: build
+    if: success()
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup .NET ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+          source-url: https://nuget.pkg.github.com/sarog/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Build release
+        run: dotnet build --configuration Release EdiEngine
+      - name: Create the package
+        run: dotnet pack --configuration Release EdiEngine
+      - name: Publish the package to GPR
+        run: dotnet nuget push EdiEngine/bin/Release/*.nupkg
