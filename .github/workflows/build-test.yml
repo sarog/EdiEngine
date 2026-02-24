@@ -3,8 +3,14 @@
 on:
   push:
     branches: [ "dev" ]
+    paths-ignore:
+      - '**.md'
+      - '.github/workflows/*.yml'
   pull_request:
     branches: [ "dev" ]
+    paths-ignore:
+      - '**.md'
+      - '.github/workflows/*.yml'
   workflow_dispatch:
 
 jobs:
@@ -48,7 +54,7 @@ jobs:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Build release
         run: dotnet build --configuration Release EdiEngine
-      - name: Create the package
+      - name: Create packages
         run: dotnet pack --configuration Release EdiEngine
-      - name: Publish the package to GPR
-        run: dotnet nuget push EdiEngine/bin/Release/*.nupkg
+      - name: Publish packages to GPR
+        run: dotnet nuget push EdiEngine\bin\Release\*.nupkg
