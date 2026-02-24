@@ -3,25 +3,20 @@
   <PropertyGroup>
     <RootNamespace>EdiEngine</RootNamespace>
     <AssemblyName>EdiEngine</AssemblyName>
-    <Description>Edi Engine main library</Description>
-    <PackageProjectUrl>https://github.com/sarog/EdiEngine</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/sarog/EdiEngine</RepositoryUrl>
-    <AssemblyVersion>1.6.0.0</AssemblyVersion>
-    <FileVersion>1.6.0.0</FileVersion>
-    <Version>1.6.0.0</Version>
+    <Description>EDI Engine main library</Description>
     <TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="newtonsoft.json" Version="13.0.4" />
+    <PackageReference Include="newtonsoft.json" Version="13.0.4"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EdiEngine.Common\EdiEngine.Common.csproj" />
-    <ProjectReference Include="..\EdiStandards\X12_004010\X12_004010.csproj" />
+    <ProjectReference Include="..\EdiEngine.Common\EdiEngine.Common.csproj"/>
+    <ProjectReference Include="..\EdiStandards\X12_004010\X12_004010.csproj"/>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.103" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.103" PrivateAssets="All"/>
   </ItemGroup>
 </Project>
